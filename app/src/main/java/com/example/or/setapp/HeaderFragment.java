@@ -15,5 +15,6 @@ public class HeaderFragment extends Fragment {
         return inflater.inflate(R.layout.header, container, false);
     }
   // jenny is very beutiful
+    int i = 1;
 
 }
