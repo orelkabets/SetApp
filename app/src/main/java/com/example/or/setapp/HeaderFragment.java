@@ -16,5 +16,8 @@ public class HeaderFragment extends Fragment {
     }
   // jenny is very beutiful
     int i = 1;
+    int i1 = 1;
+    int i2 = 1;
+    int i3 = 1;
 
 }
