@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">SetApp</string>
+    <string name="welcome">Wellcome to\n\tSetApp!</string>
+    <string name="action_settings">Settings</string>
+    <string name="faceboock_sign">sign in with Facebook</string>
+    <string name="google_sign">sign in with Google</string>
+    <string name="login_detailed_text">SetApp will send you a one time SMS\nmessage to verify your phone number\ncarrier charges may apply\n\nplease confirm your country code\nand enter your phone number</string>
+    <string name="your_country">your country</string>
+    <string name="your_phone">your phone</string>
+    <string name="new_event">SetApp a new\n Event\\Remainder</string>
+    <string name="action_search">search</string>
+    <string name="numOfShared">0/0</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

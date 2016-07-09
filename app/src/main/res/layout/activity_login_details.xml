@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context="com.example.or.setapp.loginDetails">
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/imageView"
+        android:src="@drawable/watch"
+        android:scaleType="fitCenter"
+        android:layout_above="@+id/textView2"
+        android:layout_alignParentEnd="true" />
+
+    <com.example.or.setapp.MyTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/login_detailed_text"
+        android:textColor="@color/white"
+        android:id="@+id/textView2"
+        android:gravity="center"
+        android:layout_margin="10dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:inputType="number"
+        android:textColor="@color/gray"
+        android:background="@drawable/rounded_edittext"
+        android:hint="@string/your_country"
+        android:id="@+id/country"
+        android:gravity="center"
+        android:layout_below="@+id/textView2"
+        android:layout_alignStart="@+id/phone" />
+
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:background="@drawable/rounded_edittext"
+        android:inputType="phone"
+        android:textColor="@color/gray"
+        android:hint="@string/your_phone"
+        android:gravity="center"
+        android:layout_margin="20dp"
+        android:ems="10"
+        android:id="@+id/phone"
+        android:layout_below="@+id/country"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_v_sign"
+        android:text=""
+        android:layout_margin="10dp"
+        android:id="@+id/login_button"
+        android:layout_below="@+id/phone"
+        android:layout_centerHorizontal="true" />
+
+
+</RelativeLayout>

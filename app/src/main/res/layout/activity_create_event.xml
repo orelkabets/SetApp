@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundwhite"
+    android:id="@+id/createEventContainter"
+    tools:context="com.example.or.setapp.CreateEvent">
+
+    <include layout="@layout/simple_header"
+        android:id="@+id/include"
+        />
+
+    <include layout="@layout/confirm_footer"
+        android:id="@+id/include2" />
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/selecttune"
+        android:id="@+id/selecttune"
+        android:layout_marginLeft="10dp"
+        android:layout_margin="20dp"
+        android:layout_marginRight="10dp"
+        android:layout_below="@+id/include"
+        android:layout_centerHorizontal="true" />
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:id="@+id/what_container"
+        android:gravity="center"
+        android:background="@drawable/bar"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/selecttune" />
+
+
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/when_container"
+        android:gravity="center"
+        android:background="@drawable/border"
+        android:layout_below="@+id/what_container"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        />
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/where_container"
+        android:gravity="center"
+        android:background="@drawable/border"
+        android:layout_alignEnd="@+id/when_container"
+        android:layout_below="@+id/when_container"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="125dp"
+        android:id="@+id/editText"
+        android:textColor="#A4A8BF"
+        android:gravity="center|top"
+        android:layout_below="@+id/where_container"
+        android:hint="memo:"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/share"
+        android:src="@drawable/ic_share"
+        android:layout_below="@+id/editText"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="16dp" />
+
+    <com.example.or.setapp.MyTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/numOfShared"
+        android:id="@+id/numOfShare"
+        android:layout_alignStart="@+id/share"
+        android:layout_above="@+id/include2"
+        android:layout_below="@+id/share" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/ic_plus"
+        android:id="@+id/addShared"
+        android:gravity="center"
+        android:layout_below="@+id/editText"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
