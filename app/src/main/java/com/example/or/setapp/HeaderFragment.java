@@ -14,10 +14,6 @@ public class HeaderFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.header, container, false);
     }
-  // jenny is very beutiful
-    int i = 1;
-    int i1 = 1;
-    int i2 = 1;
-    int i3 = 1;
+
 
 }
