@@ -3,7 +3,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.example.or.setapp.MyTextView
+    <com.example.or.setapp.model.MyTextView
     android:onClick="OnWhenClicked"
     android:layout_width="match_parent"
     android:layout_height="50dp"
