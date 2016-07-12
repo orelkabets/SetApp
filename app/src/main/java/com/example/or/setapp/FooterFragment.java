@@ -14,6 +14,6 @@ public class FooterFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.footer, container, false);
 
-        //new comment
+        //new comment sdfsdfs dfsd f
     }
 }
