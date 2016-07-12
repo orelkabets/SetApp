@@ -1,4 +1,4 @@
-package com.example.or.setapp;
+package com.example.or.setapp.activities;
 
 import android.app.ActionBar;
 import android.app.Activity;
@@ -7,6 +7,8 @@ import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.widget.ImageView;
+
+import com.example.or.setapp.R;
 
 public class FirstScreen extends Activity {
 

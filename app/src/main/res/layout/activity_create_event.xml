@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/backgroundwhite"
     android:id="@+id/createEventContainter"
-    tools:context="com.example.or.setapp.CreateEvent">
+    tools:context=".activities.CreateEvent">
 
     <include layout="@layout/simple_header"
         android:id="@+id/include"
@@ -80,7 +80,7 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="16dp" />
 
-    <com.example.or.setapp.MyTextView
+    <com.example.or.setapp.model.MyTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/numOfShared"

@@ -1,4 +1,4 @@
-package com.example.or.setapp;
+package com.example.or.setapp.activities;
 
 import android.app.ActionBar;
 import android.os.Bundle;
@@ -7,6 +7,11 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.or.setapp.R;
+import com.example.or.setapp.fragments.What_fragment;
+import com.example.or.setapp.fragments.When_clickedFragment;
+import com.example.or.setapp.fragments.When_fragment;
+import com.example.or.setapp.fragments.Where_fragment;
 import com.jzxiang.pickerview.TimePickerDialog;
 import com.jzxiang.pickerview.data.Type;
 import com.jzxiang.pickerview.listener.OnDateSetListener;

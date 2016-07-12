@@ -6,7 +6,7 @@
     android:background="@drawable/header"
     >
 
-    <com.example.or.setapp.MyTextView
+    <com.example.or.setapp.model.MyTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/title"

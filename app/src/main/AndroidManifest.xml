@@ -10,7 +10,7 @@
 
         <!-- Splash screen -->
         <activity
-            android:name=".FirstScreen"
+            android:name=".activities.FirstScreen"
             android:label="@string/app_name"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -19,19 +19,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".login" />
+        <activity android:name=".activities.login" />
 
         <!-- Main activity -->
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.MainActivity"
             android:label="@string/app_name"
             android:uiOptions="splitActionBarWhenNarrow">
             <meta-data
                 android:name="android.support.UI_OPTIONS"
                 android:value="splitActionBarWhenNarrow" />
         </activity>
-        <activity android:name=".loginDetails" />
-        <activity android:name=".CreateEvent"/>
+        <activity android:name=".activities.loginDetails" />
+        <activity android:name=".activities.CreateEvent"/>
     </application>
 
 </manifest>

@@ -1,4 +1,4 @@
-package com.example.or.setapp;
+package com.example.or.setapp.model;
 
 import android.content.Context;
 import android.graphics.Typeface;
