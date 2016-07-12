@@ -1,22 +1,30 @@
 package com.example.or.setapp;
 
 import android.app.ActionBar;
-import android.app.Activity;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentTransaction;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
-public class CreateEvent extends Activity {
+import com.jzxiang.pickerview.TimePickerDialog;
+import com.jzxiang.pickerview.data.Type;
+import com.jzxiang.pickerview.listener.OnDateSetListener;
 
-    MyTextView when;
-    Button selectTune;
-    EditText what,where;
-    TextView start,end;
-    FragmentManager manger;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class CreateEvent extends FragmentActivity implements OnDateSetListener {
+    private static final int STARTTIME = 1;
+    private static final int ENDTIME = 2;
+    boolean isStartTime = false;
+    SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    SimpleDateFormat tf = new SimpleDateFormat("HH:mm");
+    TimePickerDialog mDialogAll;
+    TextView startTime,endTime;
+    android.support.v4.app.FragmentManager manger;
+    When_clickedFragment when_clickedFragment;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,7 +32,7 @@ public class CreateEvent extends Activity {
         ActionBar actionBar = getActionBar();
         actionBar.hide();
 
-        manger = getFragmentManager();
+        manger = getSupportFragmentManager();
 
         // adding what , when, where textViews
         AddTextFragments();
@@ -47,18 +55,74 @@ public class CreateEvent extends Activity {
         transaction.commit();
     }
 
-
     public void OnWhenClicked(View v){
         FragmentTransaction transaction = manger.beginTransaction();
         // define the when reference to replace the when text
-        When_clickedFragment when_clickedFragment = new When_clickedFragment();
+        when_clickedFragment = new When_clickedFragment();
         transaction.replace(R.id.when_container, when_clickedFragment, "when_reference");
         transaction.addToBackStack(null);
         transaction.commit();
     }
 
     public void OnTimeClicked(View v){
-
+        switch (v.getId()){
+            case R.id.startTime :
+                isStartTime = true;
+                OpenDateTimeDialog(STARTTIME);
+                break;
+            case R.id.endTime :
+                isStartTime = false;
+                OpenDateTimeDialog(ENDTIME);
+                break;
+        }
     }
 
+    public void OpenDateTimeDialog(int state){
+        String dpString = "Select End Date and Time";
+        if (state == STARTTIME) {
+            dpString = "Select Start Date and Time";
+        }
+        long tenYears = 10L * 365 * 1000 * 60 * 60 * 24L;
+        mDialogAll = new TimePickerDialog.Builder()
+                .setCallBack(this)
+                .setCancelStringId("Cancel")
+                .setSureStringId("Sure")
+                .setTitleStringId(dpString)
+                .setYearText(" Year")
+                .setMonthText(" Month")
+                .setDayText(" Day")
+                .setHourText(" Hour")
+                .setMinuteText(" Minute")
+                .setCyclic(false)
+                .setMinMillseconds(System.currentTimeMillis())
+                .setMaxMillseconds(System.currentTimeMillis() + tenYears)
+                .setCurrentMillseconds(System.currentTimeMillis())
+                .setThemeColor(getResources().getColor(R.color.timepicker_dialog_bg))
+                .setType(Type.ALL)
+                .setWheelItemTextNormalColor(getResources().getColor(R.color.lightpurple))
+                .setWheelItemTextSelectorColor(getResources().getColor(R.color.purple))
+                .setWheelItemTextSize(14)
+                .build();
+
+
+
+        mDialogAll.show(getSupportFragmentManager(),"all");
+    }
+
+
+    @Override
+    public void onDateSet(TimePickerDialog timePickerView, long millseconds) {
+        String text = getDateToString(millseconds);
+        if (isStartTime)
+            when_clickedFragment.changeStartTimeText(text);
+        else
+            when_clickedFragment.changeEndTimeText(text);
+    }
+
+    public String getDateToString(long time) {
+        Date d = new Date(time);
+        return tf.format(d);
+    }
 }
+
+

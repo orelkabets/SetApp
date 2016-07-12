@@ -9,50 +9,46 @@
         style="?android:attr/buttonStyleSmall"
         android:layout_width="31dp"
         android:layout_height="31dp"
-        android:id="@+id/settings"
-        android:layout_marginRight="5dp"
-        android:background="@drawable/ic_alarm"
+        android:id="@+id/notification"
+        android:background="@drawable/ic_notification_red"
         android:gravity="right|center"
         android:layout_centerVertical="true"
         android:layout_alignParentEnd="true"
-        android:layout_gravity="right|center_vertical" />
+        android:layout_marginLeft="5dp" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
         android:layout_width="31dp"
         android:layout_height="31dp"
-        android:layout_marginLeft="5dp"
-        android:background="@drawable/ic_notification_red"
-        android:id="@+id/search"
+        android:background="@drawable/ic_alarm"
+        android:id="@+id/clock"
         android:layout_centerVertical="true"
         android:layout_alignParentStart="true"
-        android:layout_gravity="left|center_vertical" />
+        android:layout_marginRight="5dp" />
 
     <ImageView
-        android:layout_width="48dp"
+        android:layout_width="40dp"
         android:layout_height="wrap_content"
         android:id="@+id/title"
         android:src="@drawable/ic_minus"
-        android:gravity="center"
+        android:gravity="center_horizontal"
         android:textColor="@color/black"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_gravity="center_horizontal|bottom"
-        android:layout_alignTop="@+id/endTime"
+        android:layout_alignBottom="@+id/startTime"
         android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="35dp"
+        android:layout_height="42dp"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="END:"
+        android:text="END:  "
         android:textColor="@color/purple"
         android:textStyle="bold"
         android:id="@+id/textView4"
         android:layout_gravity="left|center_vertical"
-        android:layout_toEndOf="@+id/title"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="3dp"
-        android:layout_above="@+id/endTime" />
+        android:layout_alignBottom="@+id/endTime"
+        android:layout_alignEnd="@+id/endTime"
+        android:layout_marginTop="3dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -63,10 +59,9 @@
         android:textStyle="bold"
         android:id="@+id/start"
         android:layout_gravity="center_horizontal|top"
-        android:layout_marginEnd="21dp"
-        android:layout_toStartOf="@+id/title"
-        android:layout_alignTop="@+id/textView4"
-        android:layout_above="@+id/startTime" />
+        android:layout_alignBottom="@+id/startTime"
+        android:layout_toEndOf="@+id/title"
+        android:layout_marginTop="3dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -75,8 +70,8 @@
         android:text="00:00"
         android:id="@+id/startTime"
         android:onClick="OnTimeClicked"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/start" />
+        android:layout_alignBottom="@+id/notification"
+        android:layout_alignEnd="@+id/start" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -85,8 +80,8 @@
         android:text="12:00"
         android:onClick="OnTimeClicked"
         android:id="@+id/endTime"
-        android:layout_alignTop="@+id/startTime"
-        android:layout_alignStart="@+id/textView4" />
+        android:layout_alignBottom="@+id/title"
+        android:layout_toStartOf="@+id/title" />
 
 
 </RelativeLayout>
